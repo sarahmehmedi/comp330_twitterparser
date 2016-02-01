@@ -13,10 +13,10 @@ public class Tests {
 	String firstTweet = "Test #hashtag";
 	
 	@Test
-	public void test() {
+	public void testingHashtags() {
 
 		@SuppressWarnings("resource")
-		Scanner hashtag = new Scanner("Hello I #am testing #hashtags @sarah");
+		Scanner hashtag = new Scanner("Hello I #am testing #hashtags @sarah and www.sarahmehmedi.com");
 		String tweets = hashtag.nextLine();
 		
 		TwitterParser tweet = TwitterParser.getTweet(tweets.toLowerCase());
@@ -27,8 +27,12 @@ public class Tests {
 		ArrayList<String> testingMentions = new ArrayList <String>();
 		testingMentions.add("@sarah");
 		
+		ArrayList<String> testingWebsites = new ArrayList <String>();
+		testingWebsites.add("www.sarahmehmedi.com");
+		
 		assertEquals(testingHashtags, tweet.getUniqueHashtags());
 		assertEquals(testingMentions, tweet.getUniqueMentions());
+		assertEquals(testingWebsites, tweet.getUniqueWebsites());
 	}
 
 }
