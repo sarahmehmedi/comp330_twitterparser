@@ -16,16 +16,19 @@ public class Tests {
 	public void test() {
 
 		@SuppressWarnings("resource")
-		Scanner hashtag = new Scanner("Hello I #am testing #hashtags");
+		Scanner hashtag = new Scanner("Hello I #am testing #hashtags @sarah");
 		String tweets = hashtag.nextLine();
 		
 		TwitterParser tweet = TwitterParser.getTweet(tweets.toLowerCase());
-		ArrayList<String> testing = new ArrayList <String>();
-		testing.add("#am");
-		testing.add("#hashtags");
+		ArrayList<String> testingHashtags = new ArrayList <String>();
+		testingHashtags.add("#am");
+		testingHashtags.add("#hashtags");
 		
-		assertEquals(testing, tweet.getUniqueHashtags());
-		assert
+		ArrayList<String> testingMentions = new ArrayList <String>();
+		testingMentions.add("@sarah");
+		
+		assertEquals(testingHashtags, tweet.getUniqueHashtags());
+		assertEquals(testingMentions, tweet.getUniqueMentions());
 	}
 
 }
