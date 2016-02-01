@@ -6,6 +6,8 @@ public class TwitterParser {
 	
 	private final static List<String> hashtags = new ArrayList<String>();
 	private final static List<String> mentions = new ArrayList<String>();
+	private final static List<String> websites = new ArrayList<String>();
+
 	private String text;
 	private TwitterParser() {}
 	
@@ -26,6 +28,9 @@ public class TwitterParser {
 			else if (token.startsWith("@")){
 				mentions.add(token);
 			}
+			else if (token.startsWith("http://")|| token.startsWith("www.") || token.startsWith("https://")){
+				websites.add(token);
+			}
 		}
 	}
 	
@@ -41,5 +46,10 @@ public class TwitterParser {
 		return unique;
 	}
 	
+	public ArrayList<String> getUniqueWebsites(){
+		ArrayList<String> unique = new ArrayList<String>();
+		unique.addAll(websites);
+		return unique;
+	}	
 
 }
