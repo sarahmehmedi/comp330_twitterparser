@@ -8,7 +8,10 @@ public class Tests {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		String firstTweet = "TEST #hashtag";
+		TwitterParser.getTweet(firstTweet);
+		assertEquals("hashtag", TwitterParser.getUniqueHashtags());
+		//fail("Not yet implemented");
 	}
 
 }
