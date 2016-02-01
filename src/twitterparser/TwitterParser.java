@@ -4,7 +4,7 @@ import java.util.*;
 
 public class TwitterParser {
 	
-	private final List<String> hashtags = new ArrayList<String>();
+	private final static List<String> hashtags = new ArrayList<String>();
 	private String text;
 	private TwitterParser() {}
 	
@@ -25,7 +25,7 @@ public class TwitterParser {
 		}
 	}
 	
-	public Set<String> getUniqueHashtags(){
+	public static Set<String> getUniqueHashtags(){
 		Set<String> unique = new HashSet<String>();
 		unique.addAll(hashtags);
 		return unique;
