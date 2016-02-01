@@ -25,8 +25,8 @@ public class TwitterParser {
 		}
 	}
 	
-	public static Set<String> getUniqueHashtags(){
-		Set<String> unique = new HashSet<String>();
+	public ArrayList<String> getUniqueHashtags(){
+		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(hashtags);
 		return unique;
 	}
