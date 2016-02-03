@@ -12,6 +12,7 @@ public class Tests {
 	
 	String firstTweet = "Hello I #am testing #hashtags @sarah and www.sarahmehmedi.com";
 	String secondTweet = "I am @Testing mentions hashtag";
+	String thirdTweet = "I am testing websites www.sarahmehmedi.com and http://sarahmehmedi.me";
 	
 	@Test
 	public void testingHashtags() {
@@ -25,24 +26,35 @@ public class Tests {
 		testingHashtags.add("#am");
 		testingHashtags.add("#hashtags");
 		
-		ArrayList<String> testingWebsites = new ArrayList <String>();
-		testingWebsites.add("www.sarahmehmedi.com");
 		
 		assertEquals(testingHashtags, tweet.getUniqueHashtags());
-		assertEquals(testingWebsites, tweet.getUniqueWebsites());
 	}
 	
 	@Test
 	public void testingMentions(){
 		@SuppressWarnings("resource")
 		Scanner mention = new Scanner(secondTweet);
-		String tweets2 = mention.nextLine();
+		String tweets = mention.nextLine();
 		
-		TwitterParser tweet2 = TwitterParser.getTweet(tweets2.toLowerCase());
+		TwitterParser tweet = TwitterParser.getTweet(tweets.toLowerCase());
 		ArrayList<String> testingMentions = new ArrayList <String>();
 		testingMentions.add("@testing");
 		
-		assertEquals(testingMentions, tweet2.getUniqueMentions());
+		assertEquals(testingMentions, tweet.getUniqueMentions());
+	}
+	
+	@Test
+	public void testingWebsites(){
+		@SuppressWarnings("resource")
+		Scanner website = new Scanner(thirdTweet);
+		String tweets = website.nextLine();
+		
+		TwitterParser tweet = TwitterParser.getTweet(tweets.toLowerCase());
+		ArrayList<String> testingWebsites = new ArrayList <String>();
+		testingWebsites.add("www.sarahmehmedi.com");
+		testingWebsites.add("http://sarahmehmedi.me");
+		
+		assertEquals(testingWebsites, tweet.getUniqueWebsites());
 	}
 
 }
