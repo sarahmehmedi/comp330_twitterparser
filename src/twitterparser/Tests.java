@@ -12,10 +12,10 @@ public class Tests {
 	
 	String firstTweet = "Test #hashtag";
 	
-	@SuppressWarnings("resource")
 	@Test
 	public void testingHashtags() {
 
+		@SuppressWarnings("resource")
 		Scanner hashtag = new Scanner("Hello I #am testing #hashtags @sarah and www.sarahmehmedi.com");
 		String tweets = hashtag.nextLine();
 		
