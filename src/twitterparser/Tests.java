@@ -91,14 +91,35 @@ public class Tests {
 		assertFalse("http://sarahmehmedi.me", false);
 	}
 	
+
 	@Test
 	public void testNumberMentions(){
 		
 		ArrayList<String> testingMentions = new ArrayList<String>();
 		testingMentions.add("@sarah");
-		
+
 		assertEquals(testingMentions.size(), 1);
 	
 	}
-
+	@Test
+	public void testNumberHashtags(){
+		
+		ArrayList<String> testingHashtags = new ArrayList<String>();
+		testingHashtags.add("#am");
+		testingHashtags.add("#hashtags");
+		
+		assertEquals(testingHashtags.size(), 2);
+	
+	}
+	
+	@Test
+	public void testNumberWebsites(){
+		
+		ArrayList<String> testingWebsites = new ArrayList<String>();
+		testingWebsites.add("www.sarahmehmedi.com");
+		testingWebsites.add("http://sarahmehmedi.me");
+		
+		assertEquals(testingWebsites.size(), 2);
+	
+	}
 }
