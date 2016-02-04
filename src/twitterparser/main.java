@@ -7,9 +7,9 @@ public class main {
 	public static void main(String[] args) {
 		
 		Scanner tweetText = new Scanner(System.in);
-		readInput(tweetText);
+		inputTweets(tweetText);
 	}
-	private static void readInput(Scanner in){
+	private static void inputTweets(Scanner in){
 		System.out.println("Please enter a tweet (preferably under 140 characters): ");
 		String tweets = in.nextLine();
 		if(tweets.length() <= 140){
@@ -21,8 +21,8 @@ public class main {
 			System.out.println("Websites: " + tweet.getUniqueWebsites());
 		}
 		else{
-			System.out.println("Longer than 140 characters...");
-			readInput(in);
+			System.out.println("You have entered longer than 140 characters...");
+			inputTweets(in);
 		}
 	}
 }
