@@ -91,7 +91,6 @@ public class Tests {
 		assertFalse("http://sarahmehmedi.me", false);
 	}
 	
-
 	@Test
 	public void testNumberMentions(){
 		
@@ -99,7 +98,6 @@ public class Tests {
 		testingMentions.add("@sarah");
 
 		assertEquals(testingMentions.size(), 1);
-	
 	}
 	@Test
 	public void testNumberHashtags(){
@@ -109,7 +107,6 @@ public class Tests {
 		testingHashtags.add("#hashtags");
 		
 		assertEquals(testingHashtags.size(), 2);
-	
 	}
 	
 	@Test
@@ -120,6 +117,5 @@ public class Tests {
 		testingWebsites.add("http://sarahmehmedi.me");
 		
 		assertEquals(testingWebsites.size(), 2);
-	
 	}
 }
