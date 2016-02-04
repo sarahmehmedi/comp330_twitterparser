@@ -56,12 +56,20 @@ public class Tests {
 		assertEquals(testingWebsites, tweet.getUniqueWebsites());
 		assertTrue("www.sarahmehmedi.com", true);
 	}
+	@Test
+	public void testBoolHashtags(){
+		
+		ArrayList<String> testingHashtags = new ArrayList<String>();
+		testingHashtags.add("#am");
+		testingHashtags.add("#hashtags");
+		
+		assertTrue("#am", true);
+		assertTrue("#hashtags", true);
+		assertFalse("#dontwork", false);
+	}
 	
 	@Test
 	public void testBoolMentions(){
-		@SuppressWarnings("resource")
-		Scanner mention = new Scanner(firstTweet);
-		String tweets = mention.nextLine();
 		
 		ArrayList<String> testingMentions = new ArrayList<String>();
 		testingMentions.add("@sarah");
@@ -69,6 +77,28 @@ public class Tests {
 		assertTrue("@sarah", true);
 		assertFalse("@fake", false);
 		assertFalse("@sarah", false);
+	}
+	
+	@Test
+	public void testBoolWebsites(){
+		
+		ArrayList<String> testingMentions = new ArrayList<String>();
+		testingMentions.add("www.sarahmehmedi.com");
+		testingMentions.add("http://sarahmehmedi.me");
+		
+		assertTrue("www.sarahmehmedi.com", true);
+		assertFalse("fakewebsite.com", false);
+		assertFalse("http://sarahmehmedi.me", false);
+	}
+	
+	@Test
+	public void testNumberMentions(){
+		
+		ArrayList<String> testingMentions = new ArrayList<String>();
+		testingMentions.add("@sarah");
+		
+		assertEquals(testingMentions.size(), 1);
+	
 	}
 
 }
