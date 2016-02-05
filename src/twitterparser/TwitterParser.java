@@ -40,10 +40,22 @@ public class TwitterParser {
 		return unique;
 	}
 	
+	public int getHashtagSize(){
+		ArrayList<String> unique = new ArrayList<String>();
+		unique.addAll(hashtags);
+		return unique.size();
+	}
+	
 	public ArrayList<String> getUniqueMentions(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(mentions);
 		return unique;
+	}
+	
+	public int getMentionsSize(){
+		ArrayList<String> unique = new ArrayList<String>();
+		unique.addAll(mentions);
+		return unique.size();
 	}
 	
 	public ArrayList<String> getUniqueWebsites(){
@@ -51,5 +63,11 @@ public class TwitterParser {
 		unique.addAll(websites);
 		return unique;
 	}	
+	
+	public int getWebsiteSize(){
+		ArrayList<String> unique = new ArrayList<String>();
+		unique.addAll(websites);
+		return unique.size();
+	}
 
 }
