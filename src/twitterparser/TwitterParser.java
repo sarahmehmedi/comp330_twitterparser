@@ -17,7 +17,7 @@ public class TwitterParser {
 		tweet.parser();
 		return tweet;
 	}
-	
+	//looks through tweet to find specific #,@,and websites
 	private void parser(){
 		StringTokenizer tokenizer = new StringTokenizer(this.text);
 		while(tokenizer.hasMoreTokens()){
@@ -33,37 +33,37 @@ public class TwitterParser {
 			}
 		}
 	}
-	
+	//gets hashtags and puts into arraylist
 	public ArrayList<String> getUniqueHashtags(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(hashtags);
 		return unique;
 	}
-	
+	//gets number of  hashtags
 	public int getHashtagSize(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(hashtags);
 		return unique.size();
 	}
-	
+	//gets mentions and puts into arraylist
 	public ArrayList<String> getUniqueMentions(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(mentions);
 		return unique;
 	}
-	
+	//gets number of mentions
 	public int getMentionsSize(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(mentions);
 		return unique.size();
 	}
-	
+	//gets websites and puts intto arraylist
 	public ArrayList<String> getUniqueWebsites(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(websites);
 		return unique;
 	}	
-	
+	//gets the number of websites
 	public int getWebsiteSize(){
 		ArrayList<String> unique = new ArrayList<String>();
 		unique.addAll(websites);
