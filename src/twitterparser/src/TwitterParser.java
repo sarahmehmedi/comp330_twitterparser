@@ -1,4 +1,4 @@
-package twitterparser;
+package twitterparser.src;
 
 import java.util.*;
 
@@ -23,10 +23,20 @@ public class TwitterParser {
 		while(tokenizer.hasMoreTokens()){
 			String token = tokenizer.nextToken();
 			if(token.startsWith("#")){
-				hashtags.add(token);
+				if(token.startsWith("#@")){
+					System.out.println("#@ not valid");
+				}
+				else{
+					hashtags.add(token);
+				}
 			}
 			else if (token.startsWith("@")){
+				if(token.startsWith("@#")){
+					System.out.println("@# not valid");
+				}
+				else{
 				mentions.add(token);
+				}
 			}
 			else if (token.startsWith("http://")|| token.startsWith("www.") || token.startsWith("https://")){
 				websites.add(token);
