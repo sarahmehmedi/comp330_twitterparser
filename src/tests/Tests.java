@@ -1,10 +1,12 @@
-package twitterparser;
+package tests;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+
+import main.TwitterParser;
 
 import org.junit.Test;
 
