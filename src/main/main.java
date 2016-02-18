@@ -1,4 +1,4 @@
-package twitterparser;
+package main;
 
 import java.util.Scanner;
 

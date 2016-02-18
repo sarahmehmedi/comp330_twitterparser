@@ -1,4 +1,4 @@
-package twitterparser.src;
+package main;
 
 import java.util.*;
 
